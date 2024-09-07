@@ -37,8 +37,6 @@ nmap -p80 --script="http-enum" 10.10.11.196 -oN webScan
 whatweb http://stocker.htb/
 ```
 
-![Pastedimage20240831134053.png](/Imagenes/Stocker/Pastedimage20240831134053.png)
-
 -----------------
 ## Fuzzing
 
