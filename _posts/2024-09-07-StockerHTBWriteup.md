@@ -9,7 +9,7 @@
 ```bash
 ping -c 1 10.10.11.196
 ```
-![im1](Imagenes/Stocker/Pasted image 20240831133115.png)
+![Pasted image 20240831133115.png](Imagenes/Stocker/Pasted image 20240831133115.png)
 Como vemos según lo que nos indica el `ttl` es una maquina `Linux`
 
 - Identificación de puertos abiertos en la maquina:
