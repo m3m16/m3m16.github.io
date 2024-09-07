@@ -102,8 +102,8 @@ analytics:
 # Site Author
 author:
   name             : "m3m16"
-  avatar           : "/assets/images/foto_git.png"
-  bio              : "Pentester, CTF player<br>HackTheBox ATeam"
+  avatar           : "/assets/images/foto_git.jpg"
+  bio              : "Pentester, CTF player<br>HackTheBox Cyb3rNom4ds Team"
   location         : "Spain"
   email            : "mapmapmaptema@proton.me"
   uri              :
