@@ -9,7 +9,7 @@
 ```bash
 ping -c 1 10.10.11.196
 ```
-![Pastedimage20240831133115.png](/_posts/Imagenes/Stocker/Pastedimage20240831133115.png)
+![Pastedimage20240831133115.png](Imagenes/Stocker/Pastedimage20240831133115.png)
 
 Como vemos según lo que nos indica el `ttl` es una maquina `Linux`
 
