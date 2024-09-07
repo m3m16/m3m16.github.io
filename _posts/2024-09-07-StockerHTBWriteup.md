@@ -32,6 +32,7 @@ nmap -p80 --script="http-enum" 10.10.11.196 -oN webScan
 ```
 
 - Para ver información básica sobre la web que hay corriendo por el servidor:
+
 ```bash
 whatweb http://stocker.htb/
 ```
