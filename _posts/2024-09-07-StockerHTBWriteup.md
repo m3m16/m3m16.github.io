@@ -2,7 +2,6 @@
 
 ------------
 ## Enumeración
-----------
 
 - Identificación de SO:
   
@@ -27,6 +26,7 @@ nmap -p22,80 -sCV 10.10.11.196 -oN targeted
 ![Pastedimage20240831133708.png](/Imagenes/Stocker/Pastedimage20240831133708.png)
 
 - Al ver que hay un puerto 80 con el servicio `http` corriendo por debajo podemos lanzar el siguiente script de nmap:
+
 ```bash
 nmap -p80 --script="http-enum" 10.10.11.196 -oN webScan
 ```
@@ -40,9 +40,9 @@ whatweb http://stocker.htb/
 
 -----------------
 ## Fuzzing
-------------
 
 - Miramos si hay subdominios:
+
 ```bash
 wfuzz -c -t 200 -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H "Host: FUZZ.stocker.htb" http://stocker.htb/
 ```
@@ -55,9 +55,9 @@ Como hemos visto hemos encontrado un subdominio en el que vamos a mirar que es l
 
 -------
 ## Explotación
---------------------
 
 Como podemos observar el nuevo `subdominio` es un panel de login, podemos probar varios tipos de técnicas para poder bypassearlo o identificación de vulnerabilidades como lo siguiente:
+
 - Probar passwords por defecto
 - SqlIjection
 - NoSQLInjection
@@ -77,7 +77,6 @@ Una vez que hemos bypasseado el panel de Login empezamos a indagar un poco en la
 
 ---------------
 ## HTML INJECTION
--------------------
 
 **A la hora de crear un pedido nos crea un archivo pdf, si nosotros lo capturamos con Burpsuite a la hora de la creación del archivo pdf podemos comprobar que podemos modificar los elementos que hay dentro del pdf, dentro de todos estos elementos el que nos importa a nosotros es el `titulo`, el que se muestra por pantalla básicamente.**
 
@@ -95,6 +94,7 @@ Una vez que hemos bypasseado el panel de Login empezamos a indagar un poco en la
 `iframes, o Inline Frames, son elementos HTML que pueden cargar otra página HTML dentro de la misma documento. El atributo src es el origen del contenido del servidor externo o interno.`
 
 - Ejemplo practico en `Burpsuite`:
+
 ![Pastedimage20240831141423.png](/Imagenes/Stocker/Pastedimage20240831141423.png)
 
 Al recargar veremos el documento pdf generado...
@@ -105,7 +105,6 @@ Como vemos tenemos un LFI en el que podemos listar archivos internos del servido
 
 ---------------
 ## Wildcard Injection
--------------
 
 **Sin embargo, nos encontramos con un problema, que es que no sabemos dónde está la aplicación de desarrollo situado. Un truco fácil que podemos usar para determinar potencialmente esta ubicación es enviar JSON con formato incorrecto en uno de los puntos de conexión de la aplicación para ver si produce un error. Usemos el punto de conexión de compra como lo hicimos previamente. Para hacer esto podemos atrapar otra solicitud en Burp y quitar uno de los corchetes }. Después Al quitar el corchete y enviar la solicitud, obtenemos el siguiente mensaje de error.**
 
@@ -141,7 +140,6 @@ authSource=admin&w=1";
 
 ------------
 ## Conexión SSH
-------------
 
 ```bash
 ssh agoose@10.10.11.196
@@ -149,7 +147,6 @@ ssh agoose@10.10.11.196
 
 ----------
 ## Escalada de Privilegios
--------------
 
 ```bash
 sudo -l
