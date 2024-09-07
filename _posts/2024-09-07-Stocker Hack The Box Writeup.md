@@ -1,6 +1,6 @@
 - Tags: #linux #nosql #htmlinjection #nodejs #pathtraversal #express
 
-![/Imagenes/Stocker/CAP.png](/Imagenes/Stocker/CAP.png)
+![/Imagenes/Stocker/CAP.png](/assets/images/CAP.png)
 
 ------------
 ## Enumeración
