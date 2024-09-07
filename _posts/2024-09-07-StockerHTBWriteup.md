@@ -9,7 +9,7 @@
 ```bash
 ping -c 1 10.10.11.196
 ```
-![[Pasted image 20240831133115.png]]
+![Pasted image 20240831133115.png](Imagenes/Stocker)
 Como vemos según lo que nos indica el `ttl` es una maquina `Linux`
 
 - Identificación de puertos abiertos en la maquina:
@@ -22,7 +22,7 @@ nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 10.10.11.196 -oG allPorts
 nmap -p22,80 -sCV 10.10.11.196 -oN targeted
 ```
 
-![[Pasted image 20240831133708.png]]
+![Pasted image 20240831133708.png](Imagenes/Stocker)
 
 - Al ver que hay un puerto 80 con el servicio `http` corriendo por debajo podemos lanzar el siguiente script de nmap:
 ```bash
