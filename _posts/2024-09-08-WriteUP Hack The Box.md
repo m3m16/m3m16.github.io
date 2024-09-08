@@ -2,8 +2,8 @@
 
 ![portada.png](/assets/images/WriteUp/portada.png)
 
-# RECONOCIMIENTO
 ----------
+# RECONOCIMIENTO
 
 - Verificación de `SO`
 
@@ -37,7 +37,6 @@ whatweb http://writeup.htb/writeup/
 
 ---------
 # EXPLOTACIÓN
------------
 
 - **Nos damos cuenta de que es un CMS Made Simple 2019**
 
@@ -55,11 +54,11 @@ python2.7 46635.py -u http://10.10.10.138/writeup
 
 ----------
 # CRACKEO DE PASSWORDS
----------
 
 **Como vemos encontramos dos hashes, uno es un hash `md5` normal y otro pone `salt` , por lo que sabemos que la password se ha hasheado con un `salt`, por lo que para descifrar dicho `hash` haremos lo siguiente:**
 
 >Fichero hash.txt
+
 ```bash
 62def4866937f08cc13bab43bb14e6f7:5a599ef579066807
 ```
@@ -83,7 +82,6 @@ File: cracked.txt
 
 -------------
 # SSH
--------
 
 ```bash
 ❯ ssh jkr@10.10.10.138
@@ -110,7 +108,6 @@ jkr@writeup:~$
 
 -----------
 # ESCALADA DE PRIVILEGIOS
-----------
 
 - **Al ejecutar el comando `id` vemos lo siguiente:**
 
@@ -139,7 +136,6 @@ jkr@writeup:/tmp/$ ./pspy32
 
 ----------
 # PATH HIJACKING
-----------
 
 **Al ejecutar la herramienta vemos lo siguiente interesante:**
 
