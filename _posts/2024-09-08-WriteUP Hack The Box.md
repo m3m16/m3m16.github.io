@@ -1,6 +1,6 @@
---------
 - Tags: #web_enumeration #linux #pathhijacking #process_enumeration #cracking_hash_salt
----------
+
+[!Portada](/assets/images/WriteUp/portada.png)
 
 # RECONOCIMIENTO
 ----------
@@ -41,7 +41,7 @@ whatweb http://writeup.htb/writeup/
 
 - **Nos damos cuenta de que es un CMS Made Simple 2019**
 
-![[Pasted image 20240829225020.png]]
+![Pasted image 20240829225020.png](/assets/images/WriteUp/Pastedimage20240829225020.png)
 
 - **Ejecutamos el exploit y lo que sacamos de el es lo siguiente:**
 
