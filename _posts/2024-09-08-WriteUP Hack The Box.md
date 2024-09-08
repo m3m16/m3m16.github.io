@@ -1,6 +1,6 @@
 - Tags: #web_enumeration #linux #pathhijacking #process_enumeration #cracking_hash_salt
 
-[!Portada](/assets/images/WriteUp/portada.png)
+[!portada.png](/assets/images/WriteUp/portada.png)
 
 # RECONOCIMIENTO
 ----------
