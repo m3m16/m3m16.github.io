@@ -1,7 +1,7 @@
 ---------------
 - Tags: #windows #postgreSQL #SQLMap #rce #docker #toolbox_explotation
 
-![Pasted image 20240910232703.png](/assets/images/ToolBox/Pasted image 20240910232703.png)
+![Pasted image 20240910232703.png](/assets/images/ToolBox/Pastedimage20240910232703.png)
 
 -----------------
 # RECONOCIMIENTO
@@ -123,27 +123,27 @@ echo "nombres_dominio" >> /etc/hosts
 
 - Dominio `megalogistic.com`
 
-![[Pasted image 20240909234156.png]]
+![Pasted image 20240909234156.png](/assets/images/ToolBox/Pastedimage20240909234156.png)
 
 - Dominio `admin.megalogistic.com`
 
-![Pasted image 20240909234317.png](/assets/images/ToolBox/Pasted image 20240909234317.png)
+![Pasted image 20240909234317.png](/assets/images/ToolBox/Pastedimage20240909234317.png)
 
 - La pagina que mas nos interesa es la del acceso al `Login`, por lo que vamos a intentar `bypassear` el panel.
 - **En el caso que no sepamos los nombre de dominios de las paginas, por el casual de que nuestro escaneo no ha salido reflejado, podéis ver la información del certificado `SSL` de la web que os va a dar información como la siguiente**
 
-![Pasted image 20240909234614.png](/assets/images/ToolBox/Pasted image 20240909234614.png)
+![Pasted image 20240909234614.png](/assets/images/ToolBox/Pastedimage20240909234614.png)
 
 -----------------
 # LOGIN BYPASS
 
 >Vamos a probar a hacer una Inyección SQL básica
 
-![Pasted image 20240909234736.png](/assets/images/ToolBox/Pasted image 20240909234736.png)
+![Pasted image 20240909234736.png](/assets/images/ToolBox/Pastedimage20240909234736.png)
 
 **!FUNCIONA!**
 
-![Pasted image 20240909234826.png](/assets/images/ToolBox/Pasted image 20240909234826.png)
+![Pasted image 20240909234826.png](/assets/images/ToolBox/Pastedimage20240909234826.png)
 
 - Por lo que sabemos que el campo username es vulnerable a `SQLINJECTION`
 
@@ -152,7 +152,7 @@ echo "nombres_dominio" >> /etc/hosts
 
 >Vamos a capturar la petición del panel de `Login` con `BurpSuite` para poder utilizar la herramienta `SQLMap` e intentar extraer información de la Base de Datos.
 
-![Pasted image 20240909235320.png](/assets/images/ToolBox/Pasted image 20240909235320.png)
+![Pasted image 20240909235320.png](/assets/images/ToolBox/Pastedimage20240909235320.png)
 
 >Comandos de `SQLMap`
 
