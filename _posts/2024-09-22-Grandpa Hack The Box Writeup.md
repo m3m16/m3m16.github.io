@@ -2,7 +2,7 @@
 - Tags: #Windows #churrasco #SeImpersonatePrivilege #bufferoverflow #webdav #IIS 
 --------------------
 
-![[Pasted image 20240922203625.png]]
+![Pasted image 20240922203625.png](/assets/images/Grandpa_Images/Pastedimage20240922203625.png)
 # RECONOCIMIENTO
 
 - Empezamos haciendo una conexión para ver contra que tipo de sistema nos estamos enfrentando
