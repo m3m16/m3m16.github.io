@@ -1,10 +1,10 @@
 -----------------
 - Tags: #lxd #tomcat #crack #zip2john #lfi 
--------------------
 
-![[Pasted image 20240922150902.png]]
+![Pasted image 20240922150902.png](/assets/images/Tabby_Images/Pastedimage20240922150902.png)
+
+------------------------
 # RECONOCIMIENTO
--------------------
 
 - Empezamos viendo contra que tipo de sistema nos estamos enfrentando
 
@@ -99,7 +99,6 @@ Como podemos ver tenemos dos servicios `http` corriendo y uno que es un `Apache 
 
 ---------------------------------
 # RECONOCIMIENTO WEB
--------------------------
 
 - Empezamos aplicando un reconocimiento web con la herramienta `whatweb`
 
@@ -110,7 +109,7 @@ http://10.10.10.194:80 [200 OK] Apache[2.4.41], Bootstrap, Country[RESERVED][ZZ]
 
 Podemos ver que vemos un nombre de dominio `megahosting.htb` por lo que se podría esta aplicando `VirtualHosting`.
 
-![[Pasted image 20240922125328.png]]
+![Pasted image 20240922125328.png](/assets/images/Tabby_Images/Pastedimage20240922125328.png)
 
 Inspeccionando un poco el código vemos que si que se aplica `VirtualHosting` por lo que lo metemos dentro del `/etc/hosts` y seguimos haciendo reconocimiento.
 
@@ -125,11 +124,10 @@ No nos reporta nada importante por lo que vamos a seguir con el reconocimiento p
 
 ---------------------------
 # LFI
----------------------
 
 - Indagando un poco en la web `megahosting.htb` hemos encontrado el siguiente `LFI` en el que podremos listar contenido del server con privilegios de `www-data`
 
-![[Pasted image 20240922125847.png]]
+![Pasted image 20240922125847.png](/assets/images/Tabby_Images/Pastedimage20240922125847.png)
 
 Por lo que vamos a intentar listar algún tipo de fichero que podamos comprometer algún tipo de credenciales para acceder al sistema.
 
@@ -193,7 +191,6 @@ Sacamos las credenciales `tomcat` y `$3cureP4s5w0rd123!`, por lo que vamos a ver
 
 ------------------------
 # APACHE TOMCAT 9 EXPLOTATION
-----------------
 
 - Vamos a intentar desplegar un archivo `WAR`, solo podremos desplegarlo si tenemos suficientes privilegios (admin, manager o manager-script)
 
@@ -224,7 +221,6 @@ tomcat
 
 ------------------
 # TRATAMIENTO DE LA TTY
------------------
 
 ```bash
 script /dev/null -c bash
@@ -242,7 +238,6 @@ tomcat@tabby:/var/lib/tomcat9$ stty rows 38 columns 183
 
 -----------------------
 # MOVIMIENTO LATERAL DE USUARIOS
------------------
 
 - Como podemos ver el usuario `tomcat` es un usuarios sin privilegios con el que solo tiene acceso a típicas rutas de configuración de los servicios webs que hay activos en el servidor y poco mas.
 
@@ -361,7 +356,6 @@ Como vemos la password es `admin@it`
 
 -----------------------
 # ESCALADA A ROOT
---------------------
 
 - Probamos con la contraseña extraída contra el usuario `ash` 
 
