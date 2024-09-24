@@ -1,8 +1,7 @@
 -----------------
 - Tags: #Linux #action #python_library_hijacking
------------------
 
-![[Pasted image 20240923224954.png]]
+![Pasted image 20240923224954.png](/assets/images/Stratosphere_Images/Pastedimage20240923224954.png)
 # RECONOCIMIENTO
 
 - Hacemos `ping` a la ip victima para ver contra que tipo de sistema nos estamos enfrentando
@@ -279,7 +278,7 @@ http://10.10.10.64:8080 [200 OK] Country[RESERVED][ZZ], HTML5, IP[10.10.10.64], 
 
 Por lo que estamos viendo, ni en el puerto `80` ni en el `8080` nos devuelve nada interesante, por lo que lo que yo haría seria indagar un poco dentro de ambas webs a ver si podemos ver algo interesante
 
-![[Pasted image 20240923220609.png]]
+![Pasted image 20240923220609.png](/assets/images/Stratosphere_Images/Pastedimage20240923220609.png)
 
 Tanto una web como la otra son dos clones idénticos, lo que se me hace un poco extraño, en este punto seguiría enumerando pero ahora haciendo un poco de `Fuzzing` para ver si podemos encontrar algún tipo de directorio oculto o archivo que podamos usar posteriormente.
 
@@ -307,7 +306,7 @@ Starting gobuster in directory enumeration mode
 
 Encontramos dos rutas, `/manager` que a la hora de ponerla nos pide credenciales por lo que podemos probar con las típicas pero vamos a ver que no va a funcionar por lo que hasta que no tengamos algun tipo de credencial no probaremos con esta, y luego tenemos la ruta `/Monitoring` que nos redirige a la siguiente web:
 
-![[Pasted image 20240923221116.png]]
+![Pasted image 20240923221116.png](/assets/images/Stratosphere_Images/Pastedimage20240923221116.png)
 
 **Lo primero que vemos interesante en esta web es el archivo que nos devuelve al final de la ruta, `Welcome.action`, si indagamos un poco sobre archivos `.action` podemos ver que son archivos `Java` que están asociados a un `framework` llamado `Struts`, en resumen, los archivos `.action` no son archivos en si, sino que son parte de las URL utilizadas en aplicaciones web Java que usan frameworks somo Struts. Estas URL mapean las solicitudes a clases especificas que contienen la lógica de negocio para manejar la solicitud.**
 
