@@ -2,7 +2,7 @@
 - Tags: #Linux #keepass #dump #putty #putty2ssh
 -------------------
 
-![Pasted image 20241029170559.png](/assets/images/Pastedimage20241029170559.png)
+![Pasted image 20241029170559.png](/assets/images/Keeper_Images/Pastedimage20241029170559.png)
 # RECONOCIMIENTO
 
 - Hacemos un `ping` a la maquina victima para saber contra el tipo de sistema que nos estamos enfrentando
@@ -85,13 +85,13 @@ http://10.10.11.227:80 [200 OK] Country[RESERVED][ZZ], HTTPServer[Ubuntu Linux][
 No nos devuelve nada interesante, podríamos lanzar un script de `nmap` para ver directorios abiertos que puede tener la pagina pero ya adelanto que no hay nada.
 Por lo que vamos a echar un vistazo a la web a ver que nos proporciona.
 
-![Pasted image 20241029140721.png](/assets/images/Pastedimage20241029140721.png)
+![Pasted image 20241029140721.png](/assets/images/Keeper_Images/Pastedimage20241029140721.png)
 
 Como podemos ver nos esta dando información sobre el dominio, por lo que vamos a agregar en nuestro `/etc/hosts` `keeper.htb` & `tickets.keeper.htb`.
 
 - Visitamos la web con los nombres actualizados
 
-![Pasted image 20241029141059.png](/assets/images/Pastedimage20241029141059.png)
+![Pasted image 20241029141059.png](/assets/images/Keeper_Images/Pastedimage20241029141059.png)
 
 Nos encontramos contra un panel de `Login` de una especie de repositorio llamado `REQUEST TRACKER`, por lo que vamos a ver las contraseñas por defecto que puede tener.
 
@@ -101,7 +101,7 @@ Nos encontramos contra un panel de `Login` de una especie de repositorio llamado
 
 Y conseguimos acceder al panel de Administración de la web, indagando un poco encontramos lo siguiente.
 
-![Pasted image 20241029141744.png](/assets/images/Pastedimage20241029141744.png)
+![Pasted image 20241029141744.png](/assets/images/Keeper_Images/Pastedimage20241029141744.png)
 
 Un tal nombre de usuario `lnorgaard` y una password `Welcome2023!` por lo que como sabemos que tenemos el `ssh` abierto vamos a probar estas credenciales a ver si podemos tener acceso a la maquina.
 
@@ -245,11 +245,11 @@ Nos devuelve las posibles credenciales que pueden ser, si buscamos eso en google
 
 - Probamos la password tanto en minúsculas como mayúsculas para ver si puede funcionar
 
-![Pasted image 20241029144349.png](/assets/images/Pastedimage20241029144349.png)
+![Pasted image 20241029144349.png](/assets/images/Keeper_Images/Pastedimage20241029144349.png)
 
 Y ganamos acceso al gestor
 
-![Pasted image 20241029144417.png](/assets/images/Pastedimage20241029144417.png)
+![Pasted image 20241029144417.png](/assets/images/Keeper_Images/Pastedimage20241029144417.png)
 
 - Podemos ver la password, pero al testearla nos damos cuenta de que no nos sirve para ganar acceso total al equipo, por lo que indagando un poco vemos que en las notas nos encontramos un clave privada de `Putty`, si investigamos un poco hay una forma para pasar las claves privadas de `Putty` a claves privadas de `ssh`, por lo que vamos a intentar convertirla y ganar acceso completo al equipo victima.
 
