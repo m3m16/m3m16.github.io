@@ -1,5 +1,24 @@
------------------
-- Tags: #lxd #tomcat #crack #zip2john #lfi 
+---
+layout: single
+title: Tabby - Hack The Box
+excerpt: "Tabby es una máquina Linux fácil. La enumeración revela un vhost vulnerable a inclusión de archivos locales, lo que permite leer *tomcat-users.xml* y obtener credenciales de Tomcat. Se usa la interfaz `/manager/text` para desplegar un *war* y ejecutar un *webshell*, logrando un acceso inicial. Luego, un archivo ZIP protegido se extrae y descifra para obtener credenciales de un usuario con pocos privilegios. Este usuario pertenece al grupo *LXD*, lo que permite escalar privilegios creando un contenedor privilegiado y montando el sistema de archivos del host, obteniendo acceso *root* vía SSH."
+date: 2024-09-22
+classes: wide
+header:
+  teaser: /assets/images/Tabby_Images/Pastedimage20240922150902.png
+  teaser_home_page: true
+  icon: /assets/images/hackthebox.webp
+categories:
+  - hackthebox
+  - infosec
+tags:  
+  - lxd
+  - tomcat
+  - crack
+  - zip2john
+  - lfi
+---
+
 
 ![Pasted image 20240922150902.png](/assets/images/Tabby_Images/Pastedimage20240922150902.png)
 
