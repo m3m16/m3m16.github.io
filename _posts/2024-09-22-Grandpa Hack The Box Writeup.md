@@ -1,6 +1,23 @@
----------------
-- Tags: #Windows #churrasco #SeImpersonatePrivilege #bufferoverflow #webdav #IIS 
---------------------
+---
+layout: single
+title: Grandpa - Hack The Box
+excerpt: "Grandpa es una de las máquinas más sencillas de Hack The Box, sin embargo cubre la ampliamente explotada CVE-2017-7269. Esta vulnerabilidad es trivial de explotar y concedió acceso inmediato a miles de servidores IIS de todo el mundo cuando se hizo pública."
+date: 2024-09-22
+classes: wide
+header:
+  teaser: /assets/images/Grandpa_Images/Pastedimage20240922203625.png
+  teaser_home_page: true
+  icon: /assets/images/hackthebox.webp
+categories:
+  - hackthebox
+  - infosec
+tags:  
+  - Windows
+  - churrasco
+  - SeImpersonatePrivilege
+  - bufferoverflow
+  - webdav
+---
 
 ![Pasted image 20240922203625.png](/assets/images/Grandpa_Images/Pastedimage20240922203625.png)
 # RECONOCIMIENTO
