@@ -1,5 +1,23 @@
----------------
-- Tags: #windows #postgreSQL #SQLMap #rce #docker #toolbox_explotation
+---
+layout: single
+title: Toolbox - Hack The Box
+excerpt: "Toolbox es una máquina Windows fácil con Docker Toolbox instalado. Un contenedor Linux aloja un sitio vulnerable a inyección SQL, lo que permite acceso al contenedor. Luego, las credenciales predeterminadas de Docker Toolbox y el acceso al sistema de archivos del host se explotan para obtener un shell privilegiado en Windows."
+date: 2024-09-10
+classes: wide
+header:
+  teaser: /assets/images/ToolBox/Pastedimage20240910232703.png
+  teaser_home_page: true
+  icon: /assets/images/hackthebox.webp
+categories:
+  - hackthebox
+  - infosec
+tags:  
+  - windows
+  - postgreSQL
+  - SQLMap
+  - rce
+  - docker
+---
 
 ![Pasted image 20240910232703.png](/assets/images/ToolBox/Pastedimage20240910232703.png)
 
