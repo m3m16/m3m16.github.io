@@ -1,6 +1,23 @@
-----------------
-- Tags: #Linux #keepass #dump #putty #putty2ssh
--------------------
+---
+layout: single
+title: Keeper - Hack The Box
+excerpt: "Keeper es una máquina Linux de dificultad fácil que cuenta con un sistema de tickets de soporte que utiliza credenciales por defecto. Enumerando el servicio, somos capaces de ver las credenciales de texto claro que conducen al acceso SSH. Con el acceso `SSH`, podemos acceder a un archivo de volcado de la base de datos de KeePass, que podemos aprovechar para recuperar la contraseña maestra. Con el acceso a la base de datos `Keepass`, podemos acceder a las claves root `SSH`, que se utilizan para obtener un shell privilegiado en el host."
+date: 2024-10-29
+classes: wide
+header:
+  teaser: /assets/images/Keeper_Images/Pastedimage20241029170559.png
+  teaser_home_page: true
+  icon: /assets/images/hackthebox.webp
+categories:
+  - hackthebox
+  - infosec
+tags:  
+  - Linux
+  - keepass
+  - putty
+  - hashcat
+  - putty2ssh
+---
 
 ![Pasted image 20241029170559.png](/assets/images/Keeper_Images/Pastedimage20241029170559.png)
 # RECONOCIMIENTO
