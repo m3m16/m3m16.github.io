@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Stocker - Hack The Box
-excerpt: "Stocker es una máquina Linux de dificultad media que tiene un sitio web corriendo en el puerto 80 que anuncia varios muebles para la casa. Mediante la enumeración vHost se identifica el hostname dev.stocker.htb y al acceder a él se carga una página de login que parece estar construida con NodeJS. Enviando datos JSON y realizando una inyección NoSQL, se evita la página de login y se accede a una e-shop. La enumeración de esta tienda electrónica revela que al enviar una orden de compra, se crea un PDF que contiene detalles sobre los artículos comprados. Esta funcionalidad es vulnerable a la inyección de HTML y se puede abusar de ella para leer archivos del sistema mediante el uso de iframes. El archivo index.js se lee entonces para adquirir las credenciales de la base de datos y, debido a la reutilización de contraseñas, los usuarios pueden iniciar sesión en el sistema a través de SSH. Los privilegios pueden ser escalados mediante un ataque de path traversal en un comando definido en el archivo sudoers, que contiene un comodín para ejecutar archivos JavaScript."
+excerpt: "Stocker es una máquina Linux de dificultad media con un sitio web en el puerto 80 que anuncia muebles. Mediante enumeración vHost se descubre dev.stocker.htb, que muestra un login en NodeJS vulnerable a inyección NoSQL, permitiendo el acceso a una e-shop. Al generar un pedido, se crea un PDF vulnerable a inyección HTML, lo que permite leer archivos mediante iframes. Se extraen credenciales de index.js, reutilizadas para SSH. La escalada de privilegios se logra explotando un path traversal en un comando con comodín en sudoers, que ejecuta archivos JavaScript."
 date: 2025-03-11
 classes: wide
 header:
