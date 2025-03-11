@@ -1,4 +1,23 @@
-- Tags: #web_enumeration #linux #pathhijacking #process_enumeration #cracking_hash_salt
+---
+layout: single
+title: WriteUp - Hack The Box
+excerpt: "Writeup es una máquina Linux fácil con protección contra fuerza bruta. Un CMS vulnerable a inyección SQL permite obtener credenciales. El usuario pertenece a un grupo no predeterminado con acceso de escritura a parte del *PATH*, lo que permite secuestrar la ruta y escalar privilegios a *root*."
+date: 2024-09-08
+classes: wide
+header:
+  teaser: /assets/images/WriteUp/portada.png
+  teaser_home_page: true
+  icon: /assets/images/hackthebox.webp
+categories:
+  - hackthebox
+  - infosec
+tags:  
+  - web_enumeration
+  - linux
+  - pathhijacking
+  - process_enumeration
+  - cracking_hash_salt
+---
 
 ![portada.png](/assets/images/WriteUp/portada.png)
 
