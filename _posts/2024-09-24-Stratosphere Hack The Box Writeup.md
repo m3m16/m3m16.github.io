@@ -1,4 +1,22 @@
------------------
+---
+layout: single
+title: Stratosphere - Hack The Box
+excerpt: "Stratosphere se centra en el uso de una vulnerabilidad de ejecución de código de Apache Struts que se aprovechó en una brecha a gran escala, lo que resultó en la divulgación de millones de personas&amp;#039; información de crédito."
+date: 2024-09-24
+classes: wide
+header:
+  teaser: /assets/images/Stratosphere_Images/Pastedimage20240923224954.png
+  teaser_home_page: true
+  icon: /assets/images/hackthebox.webp
+categories:
+  - hackthebox
+  - infosec
+tags:  
+  - Linux
+  - action
+  - python_library_hijacking
+---
+
 - Tags: #Linux #action #python_library_hijacking
 
 ![Pasted image 20240923224954.png](/assets/images/Stratosphere_Images/Pastedimage20240923224954.png)
