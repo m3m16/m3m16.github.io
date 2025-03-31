@@ -5,7 +5,7 @@ excerpt: "Emdee Five For Life es un reto sencillo que requiere que el jugador le
 date: 2025-03-31
 classes: wide
 header:
-  teaser: /Imagenes/Emdee/foto3.png
+  teaser: /_posts/Imagenes/Emdee/foto3.png
   teaser_home_page: true
   icon: /assets/images/hackthebox.webp
 categories:
@@ -25,9 +25,11 @@ tags:
 # ENUMERACIÓN
 
 - Como podemos ver este `Challenge` solo es accesible a través de una instancia remota así que echemos un vistazo:
+
 ![foto1.png](/_posts/Imagenes/Emdee/foto1.png)
 
 - Nos esta devolviendo una `string` y nos quiere decir que la encriptemos y se la pasemos por el cuadro de texto, lo que pasa que cuando hacemos eso nos devuelve el siguiente error:
+
 ![foto2.png](/_posts/Imagenes/Emdee/foto2.png)
 
 -------------
