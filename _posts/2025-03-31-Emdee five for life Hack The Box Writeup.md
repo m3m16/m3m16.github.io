@@ -1,19 +1,37 @@
------------
+---
+layout: single
+title: Emdee five for life - Hack The Box
+excerpt: "Emdee Five For Life es un reto sencillo que requiere que el jugador lea una cadena, la cifre con MD5 y la envíe de vuelta a la instancia remota mediante un script."
+date: 2025-03-31
+classes: wide
+header:
+  teaser: /assets/images/CAP.png
+  teaser_home_page: true
+  icon: /assets/images/hackthebox.webp
+categories:
+  - hackthebox
+  - infosec
+tags:  
+  - python
+  - web
+  - scripting
+  - linux
+  - web requests
+---
 
-![[foto3.png]]
-# ENUMERACIÓN
+![foto3.png](/Imagenes/Emdee/foto3.png)
+
 --------
+# ENUMERACIÓN
 
 - Como podemos ver este `Challenge` solo es accesible a través de una instancia remota así que echemos un vistazo:
-![[foto1.png]]
+![foto1.png](/Imagenes/Emdee/foto1.png)
 
 - Nos esta devolviendo una `string` y nos quiere decir que la encriptemos y se la pasemos por el cuadro de texto, lo que pasa que cuando hacemos eso nos devuelve el siguiente error:
-![[foto2.png]]
+![foto2.png](/Imagenes/Emdee/foto2.png)
 
 -------------
-
 # SOLUCIÓN
-------------
 
 - Tenemos que enviar una petición GET para leer la cadena que se nos pide cifrar a MD5.
 - Encriptar dicha cadena.
