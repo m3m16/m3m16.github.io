@@ -19,16 +19,16 @@ tags:
   - web requests
 ---
 
-![foto3.png](/Imagenes/Emdee/foto3.png)
+![foto3.png](/assets/images/Emdee/foto3.png)
 
 --------
 # ENUMERACIÓN
 
 - Como podemos ver este `Challenge` solo es accesible a través de una instancia remota así que echemos un vistazo:
-![foto1.png](/Imagenes/Emdee/foto1.png)
+![foto1.png](/assets/images/Emdee/foto1.png)
 
 - Nos esta devolviendo una `string` y nos quiere decir que la encriptemos y se la pasemos por el cuadro de texto, lo que pasa que cuando hacemos eso nos devuelve el siguiente error:
-![foto2.png](/Imagenes/Emdee/foto2.png)
+![foto2.png](/assets/images/Emdee/foto2.png)
 
 -------------
 # SOLUCIÓN
