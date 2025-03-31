@@ -25,10 +25,10 @@ tags:
 # ENUMERACIÓN
 
 - Como podemos ver este `Challenge` solo es accesible a través de una instancia remota así que echemos un vistazo:
-![foto1.png](/Imagenes/Emdee/foto1.png)
+![foto1.png](/_posts/Imagenes/Emdee/foto1.png)
 
 - Nos esta devolviendo una `string` y nos quiere decir que la encriptemos y se la pasemos por el cuadro de texto, lo que pasa que cuando hacemos eso nos devuelve el siguiente error:
-![foto2.png](/Imagenes/Emdee/foto2.png)
+![foto2.png](/_posts/Imagenes/Emdee/foto2.png)
 
 -------------
 # SOLUCIÓN
