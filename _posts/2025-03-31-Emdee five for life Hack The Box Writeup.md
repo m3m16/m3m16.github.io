@@ -19,7 +19,7 @@ tags:
   - web requests
 ---
 
-![foto3.png](/assers/images/Emdee/foto3.png)
+![foto3.png](assers/images/Emdee/foto3.png)
 
 --------
 # ENUMERACIÓN
