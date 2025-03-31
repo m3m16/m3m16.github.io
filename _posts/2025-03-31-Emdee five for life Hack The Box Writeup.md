@@ -5,7 +5,7 @@ excerpt: "Emdee Five For Life es un reto sencillo que requiere que el jugador le
 date: 2025-03-31
 classes: wide
 header:
-  teaser: /assers/images/Emdee/foto3.png
+  teaser: /assets/images/Emdee/foto3.png
   teaser_home_page: true
   icon: /assets/images/hackthebox.webp
 categories:
