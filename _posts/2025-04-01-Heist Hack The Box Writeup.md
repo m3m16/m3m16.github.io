@@ -155,6 +155,7 @@ Como podemos ver una credencial es válida pero no podemos hacer nada mas que li
 En este punto lo que podemos hacer como si que nos podemos conectar a través de `rpcclient` al servicio `msrpc` es enumerar los usuarios existentes. Tenemos dos formas de hacerlo debido a que esta capado a nivel de permisos algunos comandos como el `enumdomusers`:
 
 - Enumerar usuarios de la maquina con la herramienta `lookupsid.py` de la suite de `Impacket`:
+
 ```bash
 lookupsid.py SUPPORTDESK/Hazard:stealth1agent@10.10.10.149
 Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
@@ -174,6 +175,7 @@ Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies
 ```
 
 - Enumerar de forma manual con `rpcclient`:
+
 ```bash
 rpcclient -U 'hazard%stealth1agent' 10.10.10.149
 # Usamos la opcion lookupnames para obtener el SID del usuario que sabemos
