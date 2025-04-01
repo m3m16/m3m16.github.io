@@ -30,6 +30,8 @@ ping -c 1 10.10.10.149
 ```
 
 ![ping.png](/assets/images/Heist/ping.png)
+
+
 Como podemos ver nos devuelve un `ttl` de 127 por lo que podemos intuir que la maquina a la que nos estamos enfrentando es una maquina `Windows`.
 
 - Identificación de puertos abiertos y exportar la salida en formato grepeable:
@@ -39,12 +41,14 @@ nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn 10.10.10.149 -oG allPorts
 
 ![nmapports.png](/assets/images/Heist/nmapports.png)
 
+
 - Una vez que sabemos los puertos abiertos de la maquina, el siguiente paso es la identificación de los servicios que hay corriendo detrás de cada puerto, para ello haremos un escaneo mas exhaustivo con `nmap` de la siguiente forma:
 ```bash
 nmap -p80,135,445,5985,49669 -sCV 10.10.10.149 -oN targeted
 ```
 
 ![servicesnmap.png](/assets/images/Heist/servicesnmap.png)
+
 
 Podemos ver que tenemos un servicio `http` corriendo por el puerto 80, servicio `msrpc`, servicio de `smb` por el puerto 445 y `winrm` por el puerto 5985.
 
@@ -56,16 +60,22 @@ http://10.10.10.149:80/login.php [200 OK] Bootstrap[3.3.7], Cookies[PHPSESSID], 
 
 ![login.png](/assets/images/Heist/login.png)
 
+
 Echando un vistazo a la web podemos observar que es un panel de login, podríamos intentar iniciar sesión con credenciales como `admin:admin` , `admin:password`, pero ya voy adelantando de que no es posible, fuerza bruta tampoco merece la pena probar por lo que vamos a ir rascando información e intentar recopilar la máxima información simplemente con el reconocimiento del sistema.
 
 - Hay una opción de logearnos como invitados, por lo que vamos a ver que podemos ver:
+
+
 ![guest.png](/assets/images/Heist/guest.png)
+
 
 Podemos observar que hay un tal usuario `Hazard` que esta comunicando que esta experimentando una serie de problemas con su Router Cisco y no sabe como solucionarlos, adjunta un fichero y un tal `Support Admin` le responde para la solución de los problemas.
 
 - Viendo el fichero adjunto:
 
+
 ![adjunto.png](/assets/images/Heist/adjunto.png)
+
 
 Como podemos ver hemos encontrado 3 hashes, el primero parece ser que es para el usuario Hazard, y los dos restantes para el usuario Rout3r y admin.
 
@@ -96,9 +106,13 @@ hashcat --show hash
 ```
 
 - Las dos siguientes contraseñas las vamos a descifrar con la herramienta en linea [Cisco Password Cracker](https://www.ifm.net.nz/cookbooks/passwordcracker.html) de la siguiente forma:
+
+
 ![password1.png](/assets/images/Heist/password1.png)
 
+
 ![password2.png](/assets/images/Heist/password2.png)
+
 
 -------------
 # PASSWORD SPRAYING
