@@ -17,6 +17,7 @@ tags:
   - scripting
   - linux
   - web requests
+  - intro to dante
 ---
 
 ![foto3.png](/assets/images/Emdee/foto3.png)
