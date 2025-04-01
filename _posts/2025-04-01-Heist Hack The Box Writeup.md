@@ -64,6 +64,7 @@ Echando un vistazo a la web podemos observar que es un panel de login, podríamo
 Podemos observar que hay un tal usuario `Hazard` que esta comunicando que esta experimentando una serie de problemas con su Router Cisco y no sabe como solucionarlos, adjunta un fichero y un tal `Support Admin` le responde para la solución de los problemas.
 
 - Viendo el fichero adjunto:
+
 ![adjunto.png](/assets/images/Heist/adjunto.png)
 
 Como podemos ver hemos encontrado 3 hashes, el primero parece ser que es para el usuario Hazard, y los dos restantes para el usuario Rout3r y admin.
