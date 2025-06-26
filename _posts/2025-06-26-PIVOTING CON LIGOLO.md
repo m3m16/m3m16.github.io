@@ -1,9 +1,27 @@
----------------
+---
+layout: single
+title: PIVOTING CON LIGOLO
+excerpt: "En este laboratorio, solo tenemos conexión con un host intermedio (10.129.229.147), el cual a su vez tiene acceso a una red interna (172.16.8.0/23). Con Ligolo-ng, podemos crear un túnel desde nuestra máquina hasta ese host para enrutar tráfico y acceder directamente a la red interna no visible, facilitando el pivoting de forma rápida y estable."
+date: 2025-06-26
+classes: wide
+header:
+  teaser: /assets/images/Ligolo_Images/Ligolo.png
+  teaser_home_page: true
+categories:
+  - infosec
+tags:  
+  - pivoting
+  - oscp
+  - cpts
+  - ligolo-ng
+---
+
+![Ligolo.png](/assets/images/Ligolo_Images/Ligolo.png)
 
 ## Representación del Escenario
 
  
-![[Lab.png]]
+![Lab.png](/assets/images/Ligolo_Images/Lab.png)
 
 > Nos encontramos en un laboratorio en el que nuestra maquina de ataque solo tiene conexión al host intermediario con dirección ip `10.129.229.147`, cuando entramos dentro de el vemos que tiene otra interfaz de red que nos brinda conexión a otra red distinta que es la `172.16.8.0/23`, el objetivo de esta explicación es que desde nuestra maquina de ataque tengamos acceso completo a la red no visible.
 
