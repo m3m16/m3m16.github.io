@@ -11,16 +11,16 @@ tags: [Cobalt Strike]
 ---
 
 ## Índice rápido
-- [[#Contexto — primitivas de Cobalt Strike]]
-- [[#Comparativa de técnicas]]
-- [[#TÉCNICA 1 — WinRM (mejor OPSEC)]]
-- [[#TÉCNICA 2 — PsExec (más ruidoso)]]
-- [[#TÉCNICA 3 — SCShell (técnica personalizada — Lab)]]
-- [[#TÉCNICA 4 — MavInject (LOLBAS)]]
-- [[#remote-exec — ejecución remota sin spawn de Beacon]]
-- [[#Logon Types — por qué el Beacon lateral no puede autenticarse en el dominio]]
-- [[#Lab — SCShell con impersonación de usuario]]
-- [[#Checklist de examen]]
+- Contexto — primitivas de Cobalt Strike
+- Comparativa de técnicas
+- TÉCNICA 1 — WinRM (mejor OPSEC)
+- TÉCNICA 2 — PsExec (más ruidoso)
+- TÉCNICA 3 — SCShell (técnica personalizada — Lab)
+- TÉCNICA 4 — MavInject (LOLBAS)
+- remote-exec — ejecución remota sin spawn de Beacon
+- Logon Types — por qué el Beacon lateral no puede autenticarse en el dominio
+- Lab — SCShell con impersonación de usuario
+- Checklist de examen
 
 ---
 
