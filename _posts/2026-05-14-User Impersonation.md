@@ -11,16 +11,16 @@ tags: [CS]
 ---
 
 ## Índice rápido
-- [[#Contexto — sesiones de inicio de sesión y tokens]]
-- [[#TÉCNICA 1 — make_token (credenciales en claro)]]
-- [[#TÉCNICA 2 — steal_token (robar token de proceso)]]
-- [[#TÉCNICA 3 — token-store (guardar tokens)]]
-- [[#TÉCNICA 4 — Pass the Hash (pth)]]
-- [[#TÉCNICA 5 — Pass the Ticket (PtT)]]
-- [[#TÉCNICA 6 — Process Injection (inject)]]
-- [[#Lab — Dump TGT + Pass the Ticket]]
-- [[#Referencia — flujo de decisión]]
-- [[#Checklist de examen]]
+- Contexto — sesiones de inicio de sesión y tokens
+- TÉCNICA 1 — make_token (credenciales en claro)
+- TÉCNICA 2 — steal_token (robar token de proceso)
+- TÉCNICA 3 — token-store (guardar tokens)
+- TÉCNICA 4 — Pass the Hash (pth)
+- TÉCNICA 5 — Pass the Ticket (PtT)
+- TÉCNICA 6 — Process Injection (inject)
+- Lab — Dump TGT + Pass the Ticket
+- Referencia — flujo de decisión
+- Checklist de examen
 
 ---
 
